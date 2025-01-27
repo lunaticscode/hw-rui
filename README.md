@@ -7,7 +7,7 @@
 ## 사용 방법
 
 ```
-pnpm install @hw-rui
+npm install @hw-rui
 ```
 
 ## Components
