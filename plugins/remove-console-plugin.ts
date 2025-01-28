@@ -16,9 +16,9 @@ const removeConsole = (args: RemoveConsolePluginArgs): PluginOption => {
           map: null,
         };
       }
-      const methodsToRemove = args.logLevels;
+      const removeTargetLevels = args.logLevels;
       const pattern = new RegExp(
-        `console\\.(${methodsToRemove.join("|")})\\(.*?\\);\\s*`,
+        `console\\.(${removeTargetLevels.join("|")})\\(.*?\\);\\s*`,
         "g"
       );
       const removedConsoleCode = source.replace(pattern, "");
