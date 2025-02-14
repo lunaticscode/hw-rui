@@ -111,3 +111,4 @@ const Select = {
   Item: SelectItem,
 } as SelectCompoundProps;
 export default Select;
+Select.displayName = "Select";

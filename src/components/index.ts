@@ -6,3 +6,5 @@ export { default as Popover } from "./Popover";
 export * from "./Popover";
 export { default as Select } from "./Select";
 export * from "./Select";
+export { default as useToast } from "./Toast";
+export * from "./Toast";

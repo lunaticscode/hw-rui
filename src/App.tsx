@@ -1,15 +1,16 @@
-import { useToast } from "@hw-rui/Toast";
-import { Button, Select } from "./components";
-import Accordion from "./components/Accordion";
-import AccordionRegion from "./components/Accordion/AccordionRegion";
-import AccordionTrigger from "./components/Accordion/AccordionTrigger";
-import Popover from "./components/Popover";
+import { Button, Select, Accordion, useToast, Popover } from "@hw-rui";
+
 import "./theme/default.css";
 import { useState } from "react";
 
 const Divider = () => {
   return <div style={{ margin: "20px 0px", width: "100%" }} />;
 };
+
+const components = import.meta.glob(["./components/**/guide/**/*"], {
+  eager: true,
+});
+console.log(components);
 
 function App() {
   const { toast } = useToast();

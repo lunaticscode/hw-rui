@@ -20,6 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
+      "@hw-rui": ["./src/components"],
       "@hw-rui/*": ["./src/components/*"],
       "@hw-rui-core/*": ["./src/core/*"],
       "@hw-rui-theme/*": ["./src/theme/*"]

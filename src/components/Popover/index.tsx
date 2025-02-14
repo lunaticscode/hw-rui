@@ -96,3 +96,4 @@ const Popover = {
 // Popover.Trigger = PopoverTrigger;
 // Popover.Content = PopoverContent;
 export default Popover;
+Popover.displayName = "Popover";

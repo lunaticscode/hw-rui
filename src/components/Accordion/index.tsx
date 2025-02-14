@@ -58,4 +58,5 @@ const Accordion: FC<AccordionProps> & AccordionCompoundProps = (props) => {
 
 Accordion.Trigger = AccordionTrigger;
 Accordion.Region = AccordionRegion;
+Accordion.displayName = "Accordion";
 export default Accordion;

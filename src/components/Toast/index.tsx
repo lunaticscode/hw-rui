@@ -2,7 +2,7 @@ import ToastTitle from "./ToastTitle";
 import ToastDescription from "./ToastDescription";
 import ToastClose from "./ToastTitle";
 import { ToastArgs, ToastPositions, ToastStyleFromPosition } from "./types";
-import { useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import { createRoot, Root } from "react-dom/client";
 import {
   toastCloseCls,
@@ -11,9 +11,10 @@ import {
   toastTitleCls,
 } from "@hw-rui-core/consts/classNames";
 
-export const Toaster = () => {
+export const Toaster: FC = () => {
   return <div id={"ui-toaster"}></div>;
 };
+Toaster.displayName = "Toaster";
 
 const getStyleByPosition = (pos: ToastPositions): ToastStyleFromPosition => {
   const mapPositionToStyle: { [key in typeof pos]: ToastStyleFromPosition } = {
@@ -38,7 +39,7 @@ const getStyleByPosition = (pos: ToastPositions): ToastStyleFromPosition => {
   return mapPositionToStyle[pos];
 };
 
-export const useToast = () => {
+const useToast = () => {
   const toasterRoot = useRef<Root>();
   const timerId = useRef<NodeJS.Timeout>();
 
@@ -103,3 +104,4 @@ export const useToast = () => {
     toast,
   };
 };
+export default useToast;

@@ -1,10 +1,12 @@
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import { Toaster } from "@hw-rui/Toast/index.tsx";
 
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router.tsx";
+import Layout from "./layouts/Layout.tsx";
 createRoot(document.getElementById("root")!).render(
-  <>
-    <App />
-    <Toaster />
-  </>
+  <BrowserRouter>
+    <Layout>
+      <Router />
+    </Layout>
+  </BrowserRouter>
 );
