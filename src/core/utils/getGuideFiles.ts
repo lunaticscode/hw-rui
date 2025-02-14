@@ -8,29 +8,25 @@ export type CustomRoutes = {
   Element: CustomElementType;
 };
 
-const guideFileRegex = /.*\/guide\/index\.tsx$/;
+const guideFileRegex = /.*\/guides\/([^/]+)\/index\.tsx$/;
 
 class GuideFiles {
   readonly routes: CustomRoutes[];
   readonly routeMenus: SidebarMenu[];
   constructor() {
-    const guideFiles = import.meta.glob(
-      "../../components/**/guide/**/index.tsx",
-      {
-        eager: true,
-      }
-    );
-
+    const guideFiles = import.meta.glob("../../guides/**/index.tsx", {
+      eager: true,
+    });
+    console.log(guideFiles);
     const tempRoutes: CustomRoutes[] = [];
     const sidebarMenus: SidebarMenu[] = [];
     for (const filePath of Object.keys(guideFiles)) {
       try {
         const fileName = filePath.match(guideFileRegex)?.[0] || "";
         if (!fileName) continue;
-
         const componentName = fileName
-          .split("./components/")[1]
-          .split("/guide")[0];
+          .split("/guides/")[1]
+          .split("/index.tsx")[0];
 
         tempRoutes.push({
           path: `${componentName.toLowerCase()}`,
