@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Sidebar from "./Sidebar";
-import { routeMenus } from "@hw-rui-core/utils/getGuideFiles";
 import Content from "./Main";
+import { routeMenus } from "./utils/getGuideFiles";
 
 interface LayoutProps extends PropsWithChildren {}
 const Layout: FC<LayoutProps> = ({ children }) => {

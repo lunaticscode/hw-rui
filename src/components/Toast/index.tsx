@@ -70,12 +70,7 @@ const useToast = () => {
       );
       return;
     }
-    // const getToastUi = () => {
-    //   return createPortal(
-    //     ,
-    //     document.body
-    //   );
-    // };
+
     toasterRoot.current.render(
       <div
         className={toastCls}

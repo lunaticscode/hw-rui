@@ -11,7 +11,7 @@ export default defineConfig({
       transform(code, id) {
         if (!id.includes("src/guides"))
           return {
-            code: code,
+            code,
             map: null,
           };
         if (id.slice(-3) === ".md") {

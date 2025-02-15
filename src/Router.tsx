@@ -1,6 +1,6 @@
-import { routes } from "@hw-rui-core/utils/getGuideFiles";
 import { Route, Routes } from "react-router-dom";
 import NotPoundPage from "./layouts/NotFoundPage";
+import { routes } from "@hw-rui-layouts/utils/getGuideFiles";
 
 const Router = () => {
   return (

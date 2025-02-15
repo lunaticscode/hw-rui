@@ -1,4 +1,5 @@
-import { SidebarMenu } from "../../layouts/Sidebar";
+import { SidebarMenu } from "@hw-rui-layouts/Sidebar";
+
 type CustomElementType = () => JSX.Element;
 type CustomRouteModule = {
   default: CustomElementType;
