@@ -1,12 +1,6 @@
-import { Context, useContext, useRef } from "react";
+import { Context, useContext } from "react";
 
 const useUIContext = <T>(ctx: Context<T>, ctxLabel?: string) => {
-  const tostId = useRef<NodeJS.Timeout>();
-
-  if (tostId.current) {
-    tostId.current = setTimeout(() => {}, 1000);
-  }
-
   const context = useContext(ctx);
   if (!context) {
     throw Error(

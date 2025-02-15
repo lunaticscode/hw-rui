@@ -17,7 +17,7 @@ class GuideFiles {
     const guideFiles = import.meta.glob("../../guides/**/index.tsx", {
       eager: true,
     });
-    console.log(guideFiles);
+
     const tempRoutes: CustomRoutes[] = [];
     const sidebarMenus: SidebarMenu[] = [];
     for (const filePath of Object.keys(guideFiles)) {
@@ -34,7 +34,7 @@ class GuideFiles {
         });
         sidebarMenus.push({
           label: componentName,
-          href: componentName.toLowerCase(),
+          href: `/${componentName.toLowerCase()}`,
         });
       } catch (err) {
         console.error(err);

@@ -1,13 +1,12 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-const Title = "Toast";
-const markdown = `
-## ${Title}
-`;
+import GuideTitle from "@hw-rui-layouts/components/GuideTitle";
+import useTranslator from "@hw-rui-layouts/hooks/useTranslator";
+
 const Intro = () => {
+  const { Trans } = useTranslator();
   return (
     <>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+      <GuideTitle>Toast</GuideTitle>
+      <Trans langKey="toast-intro" />
     </>
   );
 };

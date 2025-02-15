@@ -1,13 +1,12 @@
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-const Title = "Popover";
-const markdown = `
-## ${Title}
-`;
+import GuideTitle from "@hw-rui-layouts/components/GuideTitle";
+import useTranslator from "@hw-rui-layouts/hooks/useTranslator";
+
 const Intro = () => {
+  const { Trans } = useTranslator();
   return (
     <>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
+      <GuideTitle>Popover</GuideTitle>
+      <Trans langKey="popover-intro" />
     </>
   );
 };

@@ -22,6 +22,8 @@
     "paths": {
       "@hw-rui": ["./src/components"],
       "@hw-rui/*": ["./src/components/*"],
+      "@hw-rui-layouts/*": ["./src/layouts/*"],
+      "@hw-rui-guides/*": ["./src/guides/*"],
       "@hw-rui-core/*": ["./src/core/*"],
       "@hw-rui-theme/*": ["./src/theme/*"]
     }

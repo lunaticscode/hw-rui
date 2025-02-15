@@ -1,0 +1,47 @@
+.app-sidebar {
+  width: var(--sidebar-width);
+  height: calc(100vh - 2rem);
+  padding: 1rem;
+  background-color: var(--app-main-color);
+  border-right: 1px solid #ddd;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+}
+
+.app-sidebar-translate-buttons-wrapper {
+  margin: 10px 0px;
+  text-align: center;
+}
+
+.app-sidebar-translate-buttons-wrapper > button {
+  width: 50px;
+  margin: 0px 5px;
+  font-size: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.app-sidebar-menu {
+  display: block;
+  padding: 0.75rem;
+  color: #bbbbbb;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s;
+}
+
+.app-sidebar-menu:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.app-sidebar-menu[data-active="true"] {
+  font-weight: bold;
+  color: white;
+}
+.app-sidebar-menu[data-active="true"]:hover {
+  color: #333;
+}
