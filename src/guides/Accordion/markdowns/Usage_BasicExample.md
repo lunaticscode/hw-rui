@@ -1,5 +1,5 @@
 ```tsx
-import Accordion from "./Accordion";
+import Accordion from "@hw-rui/accordion";
 const App = () => {
   return (
     <Accordion>

@@ -11,7 +11,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ code }) => {
   const handleClickCopy = () => {
     if (!code) return;
     const filteredCode = code.replace(/```[a-zA-Z]+\n|```/g, "");
-    window.navigator.clipboard.writeText(filteredCode);
+    window.navigator.clipboard.writeText(filteredCode.trim());
   };
   return (
     <>

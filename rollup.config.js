@@ -16,7 +16,7 @@ const INPUT_COMPNENTS_DIRNAME = "components";
  * @param {string} component
  */
 const getBasePkgJson = (component = "") => ({
-  version: "1.0.4",
+  version: "0.0.1",
   name: `@hw-rui/${component.toLowerCase()}`,
   main: "./index.cjs",
   module: "./index.js",
