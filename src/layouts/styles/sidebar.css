@@ -35,7 +35,8 @@
 
 .app-sidebar-menu:hover {
   background-color: #e9ecef;
-  color: #333;
+  color: var(--app-main-color);
+  font-weight: bold;
 }
 
 .app-sidebar-menu[data-active="true"] {

@@ -1,0 +1,17 @@
+{
+  "active": ["Accordion", "Button", "Popover", "Select"],
+  "status": {
+    "Accordion": {
+      "packageName": "@hw-rui/accordion"
+    },
+    "Button": {
+      "packageName": "@hw-rui/button"
+    },
+    "Popover": {
+      "packageName": "@hw-rui/popover"
+    },
+    "Select": {
+      "packageName": "@hw-rui/select"
+    }
+  }
+}

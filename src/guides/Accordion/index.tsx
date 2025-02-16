@@ -38,7 +38,7 @@ const Guide = () => {
         <CodeBlock code={installCode} />
       </Install>
       <Usage>
-        <GuideTitle type="h3">Basic Example</GuideTitle>
+        <GuideTitle type="h3">Basic</GuideTitle>
         <CodeBlock code={basicExampleCode} />
       </Usage>
       <Props />
