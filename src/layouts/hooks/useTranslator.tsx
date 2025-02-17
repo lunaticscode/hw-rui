@@ -7,7 +7,7 @@ interface TransProps {
 const useTranslator = () => {
   const {
     t,
-    i18n: { changeLanguage },
+    i18n: { language, changeLanguage },
   } = useTranslation();
 
   const Trans: FC<TransProps> = ({ langKey }) => {
@@ -15,6 +15,7 @@ const useTranslator = () => {
   };
 
   return {
+    language,
     changeLanguage,
     Trans,
   };
