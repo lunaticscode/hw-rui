@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import { Command } from "commander";
+import prompts from "prompts";
 const baseUrl = process.env.NODE_ENV === "production"
     ? "https://hw-rui.guide.com"
     : "http://localhost:5173";
@@ -31,8 +32,29 @@ const exec = async () => {
         .name("add")
         .description("add components to your project")
         .argument("[components...]", "install components")
-        .action((components, options) => {
-        console.log(components, options);
+        .action(async (components, options) => {
+        // console.log(components, options);
+        const installableComponents = components.filter((comp) => activeComponents.includes(comp));
+        if (!installableComponents || !installableComponents.length) {
+            // select components from prompt
+            const { selectedComponents = [] } = await prompts({
+                type: "multiselect",
+                name: "selectedComponents",
+                message: "Select from the installable components below.",
+                hint: "Space to select. A to toggle all. Enter to submit.",
+                choices: activeComponents.map((comp) => ({
+                    title: comp,
+                    value: `@hw-rui/${comp.toLocaleLowerCase()}`,
+                })),
+            });
+            if (selectedComponents && selectedComponents.length) {
+                for (const componentPackageName of selectedComponents) {
+                    console.log(`Install ${componentPackageName} .....`);
+                }
+            }
+        }
+        else {
+        }
     });
     addCommand.parse();
 };
