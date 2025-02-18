@@ -3,7 +3,8 @@
 ## 📌 개요
 
 이 프로젝트는 **Rollup**을 사용하여 React UI 컴포넌트를 개별 패키지로 빌드하는 설정을 포함하고 있습니다. 각 컴포넌트는 독립적인 패키지로 관리되며, **ESM(CommonJS 포함) 및 타입 정의 파일(.d.ts)을 출력**합니다.
-https://triangular-nest-0f1.notion.site/_-_2025-1991baec04bd80c0970dc6ea3b0e817f#1991baec04bd804797cdc3b46171badc
+
+https://triangular-nest-0f1.notion.site/_-_2025-1991baec04bd80c0970dc6ea3b0e817f?pvs=25#1991baec04bd804797cdc3b46171badc
 
 또한, **File-based Routing** 기능을 포함하여 `src/guides` 디렉터리 내의 가이드 문서를 자동으로 라우팅할 수 있도록 구현되었습니다.
 
