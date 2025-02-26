@@ -1,0 +1,32 @@
+name: deploy-to-oci
+
+on:
+  push:
+    branches: [main]
+
+env:
+  DOCKER_CONTAINER_NAME: hw-rui-container
+
+jobs:
+  warmup:
+    runs-on: hw-oci-runner
+    steps:
+      - name: Testing self-hosted runner, check user.
+        run: whoami
+      - name: check executable docker cli
+        run: docker --version
+
+  setup-docker:
+    needs: warmup
+    runs-on: hw-oci-runner
+    steps:
+      - name: Git Checkout and check exist dockerfile.
+        uses: actions/checkout@v4
+      - name: Execute setup docker container file(run-docker.sh)
+        run: sh ./run-docker.sh
+      - name: Check running active docker containers
+        run: docker ps
+      - name: Copy dist folder to nginx root folder
+        run: docker cp $DOCKER_CONTAINER_NAME:/usr/share/nginx/html /var/www/rui
+      - name: Nginx reload.
+        run: sudo service nginx reload

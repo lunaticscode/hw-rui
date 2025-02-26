@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
-import removeConsole from "vite-remove-console";
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -9,17 +9,11 @@ export default defineConfig({
     {
       name: "markdown-loader",
       transform(code, id) {
-        if (!id.includes("src/guides"))
-          return {
-            code,
-            map: null,
-          };
         if (id.slice(-3) === ".md") {
           return `export default ${JSON.stringify(code)};`;
         }
       },
     },
-    removeConsole(),
   ],
   resolve: {
     alias: [

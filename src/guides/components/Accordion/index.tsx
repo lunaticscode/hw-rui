@@ -11,14 +11,28 @@ import GuideTitle from "@hw-rui-layouts/components/GuideTitle";
 import useTranslator from "@hw-rui-layouts/hooks/useTranslator";
 import { useEffect, useState } from "react";
 
+const setProcessedMarkdownString = (md: string) => {
+  console.log({ md });
+  const startString = md.slice(0, 3);
+  if (startString !== "```") {
+    return "```" + md + "```";
+  }
+  return md;
+};
+
 const Guide = () => {
   const { Trans } = useTranslator();
   const [basicExampleCode, setBasicExampleCode] = useState("");
   const [installCode, setInstallCode] = useState("");
   const setUsageCodes = () => {
     import("./markdowns/Usage_BasicExample.md")
-      .then((res) => res.default)
-      .then((res) => setBasicExampleCode(res));
+      .then((res) => {
+        console.log(res.default);
+        return res.default;
+      })
+      .then((res) => {
+        setBasicExampleCode(setProcessedMarkdownString(res));
+      });
   };
   const setInstallCodes = () => {
     import("./markdowns/Install_Code.md")

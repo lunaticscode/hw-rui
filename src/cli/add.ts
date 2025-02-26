@@ -1,11 +1,13 @@
 import fetch from "node-fetch";
 import { Command } from "commander";
 import prompts from "prompts";
+
 const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://hw-rui.guide.com"
-    : "http://localhost:5173";
-const componentsJsonUrl = `${baseUrl}/registry/components.json`;
+    ? "https://hw-lab.site"
+    : "http://localhost:8080";
+
+const componentsJsonUrl = `${baseUrl}/registry/components`;
 
 interface ComponentStatus {
   packageName: string;
@@ -48,7 +50,7 @@ const exec = async () => {
     .name("add")
     .description("add components to your project")
     .argument("[components...]", "install components")
-    .action(async (components, options) => {
+    .action(async (components, _options) => {
       // console.log(components, options);
       const installableComponents: string[] = components.filter(
         (comp: string) => activeComponents.includes(comp)
