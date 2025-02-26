@@ -27,6 +27,6 @@ jobs:
       - name: Check running active docker containers
         run: docker ps
       - name: Copy dist folder to nginx root folder
-        run: docker cp $DOCKER_CONTAINER_NAME:/usr/share/nginx/html /var/www/rui
+        run: sudo docker cp $DOCKER_CONTAINER_NAME:/usr/share/nginx/html /var/www/rui
       - name: Nginx reload.
         run: sudo service nginx reload
