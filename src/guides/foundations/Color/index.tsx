@@ -32,7 +32,7 @@ const Color = () => {
       const req = await fetch(`${API_BASE_URL}/api/foundations/color-json`);
       if (req.ok) {
         const colorVariables = await req.json();
-        setVariables(getProcessedVariables(colorVariables));
+        setVariables(getProcessedVariables(colorVariables.data));
       }
     } catch (err) {
       console.error(err);
