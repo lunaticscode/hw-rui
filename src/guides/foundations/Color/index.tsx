@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "@hw-rui-guides/utils/api";
 import GuideTitle from "@hw-rui-layouts/components/GuideTitle";
 import { useEffect, useState } from "react";
 
@@ -28,7 +29,7 @@ const Color = () => {
   >({});
   const getColorVariables = async () => {
     try {
-      const req = await fetch("http://localhost:8088/foundations/color.json");
+      const req = await fetch(`${API_BASE_URL}/api/foundations/color-json`);
       if (req.ok) {
         const colorVariables = await req.json();
         setVariables(getProcessedVariables(colorVariables));
